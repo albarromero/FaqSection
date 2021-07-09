@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #d6ebfd;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0 40px;
+}
+
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq {
+    background-color:rgba(255, 255, 255, 0.568);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 2px 30px 20px;
+    margin-bottom: 10px;
+    position: relative;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+
+.faq.active {
+    background-color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.faq.active::before, .faq.active::after {
+    content: "?";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:cornflowerblue;
+    font-size: 100px;
+    position: absolute;
+    opacity: 0.10;
+    top: 30px;
+    left: 20px;
+    z-index: 0;
+}
+
+.faq-text {
+    display: none;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.faq-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 300px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    height: 25px;
+    width: 25px;
+    transition: all 0.5s;
+}
+
+.faq-toggle .uil-multiply {
+    display: none;
+}
+
+.faq.active .faq-toggle .uil-multiply {
+    display: block;
+}
+
+.faq.active .faq-toggle .uil-angle-down {
+    display: none;
+}
+
+.faq.active .faq-toggle:hover,
+.faq .faq-toggle:hover {
+    background-color: #d6ebfd;
+    color: white;
+}
